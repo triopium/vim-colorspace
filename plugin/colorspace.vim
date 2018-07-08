@@ -227,8 +227,3 @@ function! colorspace#ColorSpaceShow()
 endfunction
 "call colorspace#ColorSpaceShow()
 "call buffer#GoToScratch("bufo",10)
-
-function! Reto()
-	call buffer#GoToScratch("bufo",10)
-endfunction
-""call Reto()
