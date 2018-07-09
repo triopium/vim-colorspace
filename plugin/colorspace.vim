@@ -1,7 +1,3 @@
-""SHOW COLORSPACE
-"DEPENDENCIES:
-"genstr#
-
 "TODO:"
 "4. Last used colors list
 "5. favorite colors
@@ -84,8 +80,8 @@ function! colorspace#ColorPattern(rows,columns)
 	return pattls
 endfunction
 ""echo colorspace#ColorPattern(10,10)
-
 ""echo colorspace#ColorPattern(10,10)
+"
 ""GET LIST OF COLORS FROM COLORSPACE:
 function! colorspace#ColorSequence(ncolors,lbound,step)
 	let l:colorlist=[]
@@ -130,7 +126,7 @@ function! colorspace#ColorPaleteGray(length)
 	endfor
 	return l:vec
 endfunction
-""echo ColorGrayScale(10)
+""echo colorspace#ColorPaleteGray(10)
 
 ""SPECIFY PALETES WHICH WILL BE SHOWN:
 function! colorspace#ColorPaletesList()
@@ -198,8 +194,6 @@ function! colorspace#ColorApply(paletes)
 		exe l:mcommand
 	endfor
 endfunction
-""let plts=colorspace#ColorPaletesList()
-""echo colorspace#ColorApply(plts)
 
 function! colorspace#ColorSpaceShow()
 	"Generate dummy string
@@ -217,13 +211,12 @@ function! colorspace#ColorSpaceShow()
 		let l:bufname="ColorPaletes"
 		call buffer#GoToScratch(l:bufname,l:rows)
 	"Delete content of buffer and put dummy string in it"
-		%d_
+		normal! %d_
 		0put = l:texti
-		$d_
 	"Apply coloring syntax
 		syn clear
+		setlocal nocul
 		call colorspace#ColorApply(l:paletes)
 		nnoremap <buffer> <silent> <CR> :call colorspace#GetColor()<CR>
 endfunction
 "call colorspace#ColorSpaceShow()
-"call buffer#GoToScratch("bufo",10)
