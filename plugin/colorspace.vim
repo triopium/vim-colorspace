@@ -1,4 +1,5 @@
 "TODO:"
+"3. Read palettes from custom config file
 "4. Last used colors list
 "5. favorite colors
 "6. increase red, increase blue, increase green
@@ -117,6 +118,7 @@ function! colorspace#ColorRGBseq(rgb,onum1,onum2)
 endfunction
 ""echo colorspace#ColorRGBseq('g',10,14)
 
+""GREY PALETTE:
 function! colorspace#ColorPaleteGray(length)
 	let l:step=255/a:length
 	let l:vec=[]
@@ -181,6 +183,7 @@ function! colorspace#ColorPaletesList()
 endfunction
 ""echo colorspace#ColorPaletesList()
 
+""APPLY HIGHLIGHTING PATERNS:
 function! colorspace#ColorApply(paletes)
 	let l:lenpaletelist=len(a:paletes)
 	""number of rows which paletes takes
@@ -195,6 +198,7 @@ function! colorspace#ColorApply(paletes)
 	endfor
 endfunction
 
+""SHOW COLOR PALETTES IN SPLIT BUFFERS:
 function! colorspace#ColorSpaceShow()
 	"Generate dummy string
 		let l:charspc=g:genstr#CharspacesList.aZ10
