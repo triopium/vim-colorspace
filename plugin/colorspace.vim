@@ -191,7 +191,7 @@ function! colorspace#ColorApply(paletes)
 	let matchpatt=colorspace#ColorPattern(l:wh,60)
 	for l:i in range(0,l:lenpaletelist-1,1)
 		let l:hname="DynColor" . l:i
-		let l:hicommand='highlight ' . l:hname . ' guibg=' . a:paletes[l:i].  ' guifg=' . a:paletes[l:i]
+		let l:hicommand='highlight ' . l:hname . ' guibg=' . a:paletes[l:i] . ' guifg=' . a:paletes[l:i]
 		let l:mcommand='syn match ' . l:hname . ' ' . shellescape(l:matchpatt[l:i])
 		exe l:hicommand
 		exe l:mcommand
@@ -215,6 +215,7 @@ function! colorspace#ColorSpaceShow()
 		let l:bufname="ColorPaletes"
 		call buffer#GoToScratch(l:bufname,l:rows)
 	"Delete content of buffer and put dummy string in it"
+		set ma
 		normal! %d_
 		0put = l:texti
 	"Apply coloring syntax
@@ -222,5 +223,6 @@ function! colorspace#ColorSpaceShow()
 		setlocal nocul
 		call colorspace#ColorApply(l:paletes)
 		nnoremap <buffer> <silent> <CR> :call colorspace#GetColor()<CR>
+		set noma
 endfunction
 "call colorspace#ColorSpaceShow()
