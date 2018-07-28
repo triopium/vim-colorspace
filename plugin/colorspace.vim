@@ -60,7 +60,7 @@ endfunction
 function! colorspace#GetColor()
 	let l:color=synIDattr(synIDtrans(synID(line("."), col("."), 1)), "fg")
 	echo l:color
-	let @" = l:color
+	let @* = l:color
 endfunction
 ""echo colorspace#GetColor()
 
