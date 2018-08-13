@@ -1,7 +1,7 @@
 # vim-colorspace
 * Show color palete in split buffer. 
 * Chose color with cursor keys. 
-* Copy color number to clipboard "\* with enter.
+* Copy color number to registry clipboard "\* with enter.
 * various functions dealing with colors and color palettes
 
 # Dependency
@@ -12,7 +12,6 @@
 
 # Mapping 
 * show pallete in splitbuffer
-
 nnoremap <leader>a :silent call colorspace#ColorSpaceShow()<CR>
 * automatic mapping local to color palette buffer
 
