@@ -12,9 +12,11 @@
 
 # Mapping 
 * show pallete in splitbuffer
--nnoremap <leader>a :silent call colorspace#ColorSpaceShow()<CR>
+
+nnoremap <leader>a :silent call colorspace#ColorSpaceShow()<CR>
 * automatic mapping local to color palette buffer
--Enter - copy color under cursor to "\* buffer
+
+Enter - copy color under cursor to "\* buffer
 
 # Usage
 [![vim-colorspace.gif](https://s22.postimg.cc/k7agc0j6p/vim-colorspace.gif)](https://postimg.cc/image/h0fwsdyql/)
