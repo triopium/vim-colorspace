@@ -12,7 +12,9 @@
 
 # Mapping 
 * show pallete in splitbuffer
-nnoremap <leader>a :silent call colorspace#ColorSpaceShow()<CR>
+
+- nnoremap <leader>a :silent call colorspace#ColorSpaceShow()<CR>
+
 * automatic mapping local to color palette buffer
 
 Enter - copy color under cursor to "\* buffer
